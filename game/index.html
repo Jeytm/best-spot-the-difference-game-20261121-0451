@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Find the Difference — Three Little Worlds</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="title-block">
+        <h1>Find the Difference</h1>
+        <p class="subtitle">Three little worlds · 10 differences each · spot them all before the clock runs out</p>
+      </div>
+      <div class="hud" id="hud">
+        <div class="hud-item"><span class="hud-label">Scene</span><span id="level-name" class="hud-value">—</span></div>
+        <div class="hud-item"><span class="hud-label">Found</span><span class="hud-value"><span id="found-count">0</span> / <span id="total-count">10</span></span></div>
+        <div class="hud-item"><span class="hud-label">Time</span><span id="timer" class="hud-value timer">4:00</span></div>
+        <div class="hud-item"><span class="hud-label">Hints</span><span id="hints-left" class="hud-value">3</span></div>
+        <div class="hud-item"><span class="hud-label">Score</span><span id="score" class="hud-value">0</span></div>
+        <div class="hud-actions">
+          <button id="hint-btn" class="btn">Hint (H)</button>
+          <button id="restart-btn" class="btn">Restart (R)</button>
+        </div>
+      </div>
+    </header>
+
+    <p class="level-line"><strong id="level-sub">—</strong> · <span id="remain-note">10 differences still hiding</span></p>
+
+    <main class="panels">
+      <figure class="panel">
+        <figcaption>Picture A</figcaption>
+        <canvas id="panel-left" width="600" height="420"></canvas>
+      </figure>
+      <figure class="panel">
+        <figcaption>Picture B</figcaption>
+        <canvas id="panel-right" width="600" height="420"></canvas>
+      </figure>
+    </main>
+
+    <footer class="howto">
+      <p>Click a difference in <strong>either</strong> picture — it gets circled in both. A wrong tap costs 5 seconds.
+      Hints: 3 per scene (button or <kbd>H</kbd>). Find all 10 to move on; leftover time becomes bonus points.</p>
+    </footer>
+
+    <div id="toast" class="toast" role="status"></div>
+    <div id="overlay" class="overlay"></div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
